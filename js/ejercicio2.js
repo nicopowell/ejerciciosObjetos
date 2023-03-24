@@ -21,12 +21,14 @@ cuenta = {
         document.write(`<hr>Se extrajeron $${cantidad}`);
     },
     informar: () => {
-        return `<hr><p>Estado de la cuenta:</p><p>Titular: ${cuenta.titular}</p><p>Saldo: $${cuenta.saldo}</p>`;
+        document.write(`<hr><p>Estado de la cuenta:</p>`);
+        document.write(`<p>Titular: ${cuenta.titular}</p>`);
+        document.write(`<p>Saldo: $${cuenta.saldo}</p>`);
     },
 };
 
-document.write(cuenta.informar());
+cuenta.informar();
 cuenta.ingresar(100);
-document.write(cuenta.informar());
+cuenta.informar();
 cuenta.extraer(35);
-document.write(cuenta.informar());
+cuenta.informar();
