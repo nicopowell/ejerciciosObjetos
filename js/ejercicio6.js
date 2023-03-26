@@ -25,7 +25,7 @@ class Libro {
         return this._isbn;
     }
 
-    set isbn(value) {
+    set cambiarIsbn(value) {
         this._isbn = value;
     }
 
@@ -33,7 +33,7 @@ class Libro {
         return this._titulo;
     }
 
-    set titulo(value) {
+    set cambiarTitulo(value) {
         this._titulo = value;
     }
 
@@ -41,7 +41,7 @@ class Libro {
         return this._autor;
     }
 
-    set autor(value) {
+    set cambiarAutor(value) {
         this._autor = value;
     }
 
@@ -49,7 +49,7 @@ class Libro {
         return this._numeroPaginas;
     }
 
-    set numeroPaginas(value) {
+    set cambiarNumeroPaginas(value) {
         this._numeroPaginas = value;
     }
 
