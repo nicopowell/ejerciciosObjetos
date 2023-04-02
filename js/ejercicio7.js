@@ -22,8 +22,8 @@ class Contacto {
     #nombre;
     #telefono;
     constructor(nombre, telefono) {
-        this.nombre = nombre;
-        this.telefono = telefono;
+        this.#nombre = nombre;
+        this.#telefono = telefono;
     }
     get nombre() {
         return this.#nombre;
@@ -49,8 +49,8 @@ class Agenda {
     #tamanio;
     #contactos;
     constructor(tamanio) {
-        this.tamanio = tamanio;
-        this.contactos = [];
+        this.#tamanio = tamanio;
+        this.#contactos = [];
     }
     get tamanio() {
         return this.#tamanio;
