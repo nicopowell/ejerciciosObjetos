@@ -10,15 +10,86 @@ generaDNI(): genera un número aleatorio de 8 cifras.
 */
 
 class Persona {
+    #nombre;
+    #edad;
+    #dni;
+    #sexo;
+    #peso;
+    #altura;
+    #anio;
     constructor(nombre, edad, sexo, peso, altura, anio) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.dni = undefined;
-        this.sexo = sexo;
-        this.peso = peso;
-        this.altura = altura;
-        this.anio = anio;
+        this.#nombre = nombre;
+        this.#edad = edad;
+        this.#dni = undefined;
+        this.#sexo = sexo;
+        this.#peso = peso;
+        this.#altura = altura;
+        this.#anio = anio;
     }
+    get nombre() {
+        return this.#nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+    get edad() {
+        return this.#edad;
+    }
+
+    set edad(nuevoEdad) {
+        if (nuevoEdad > 0 && nuevoEdad < 130) {
+            this.#edad = nuevoEdad;
+        }
+    }
+    get dni() {
+        return this.#dni;
+    }
+
+    set dni(nuevoDni) {
+        if (nuevoDni >= 10000000 && nuevoDni <= 99999999) {
+            this.#dni = nuevoDni;
+        }
+    }
+    get sexo() {
+        return this.#sexo;
+    }
+
+    set sexo(nuevoSexo) {
+        if (nuevoSexo !== "") {
+            this.#sexo = nuevoSexo;
+        }
+    }
+    get peso() {
+        return this.#peso;
+    }
+
+    set peso(nuevoPeso) {
+        if (nuevoPeso > 0) {
+            this.#peso = nuevoPeso;
+        }
+    }
+    get altura() {
+        return this.#altura;
+    }
+
+    set altura(nuevaAltura) {
+        if (nuevaAltura > 0) {
+            this.#altura = nuevaAltura;
+        }
+    }
+    get anio() {
+        return this.#anio;
+    }
+
+    set anio(nuevoAnio) {
+        if (nuevoAnio > 1900 && nuevoAnio < 2023) {
+            this.#anio = nuevoAnio;
+        }
+    }
+
     mostrarGeneracion() {
         if (this.anio >= 1994 && this.anio <= 2010) {
             document.write(

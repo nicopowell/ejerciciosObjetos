@@ -3,9 +3,29 @@ Escribe una clase que permita crear distintos objetos “rectángulos”, con la
 */
 
 class Rectangulos {
+    #alto;
+    #ancho;
     constructor(alto, ancho) {
-        this.alto = alto;
-        this.ancho = ancho;
+        this.#alto = alto;
+        this.#ancho = ancho;
+    }
+    get alto() {
+        return this.#alto;
+    }
+
+    set alto(nuevoAlto) {
+        if (nuevoAlto > 0) {
+            this.#alto = nuevoAlto;
+        }
+    }
+    get ancho() {
+        return this.#ancho;
+    }
+
+    set ancho(nuevoAncho) {
+        if (nuevoAncho > 0) {
+            this.#ancho = nuevoAncho;
+        }
     }
     mostrarInfo() {
         document.write("<hr>");

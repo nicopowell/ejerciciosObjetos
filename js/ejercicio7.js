@@ -19,16 +19,54 @@ Crea un menú con opciones que serán seleccionadas por el usuario usando un pro
 */
 
 class Contacto {
+    #nombre;
+    #telefono;
     constructor(nombre, telefono) {
-        this.nombre = nombre;
-        this.telefono = telefono;
+        this.#nombre = nombre;
+        this.#telefono = telefono;
+    }
+    get nombre() {
+        return this.#nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+    get telefono() {
+        return this.#telefono;
+    }
+
+    set telefono(nuevoTelefono) {
+        if (nuevoTelefono > 0) {
+            this.#telefono = nuevoTelefono;
+        }
     }
 }
 
 class Agenda {
+    #tamanio;
+    #contactos;
     constructor(tamanio) {
-        this.tamanio = tamanio;
-        this.contactos = [];
+        this.#tamanio = tamanio;
+        this.#contactos = [];
+    }
+    get tamanio() {
+        return this.#tamanio;
+    }
+
+    set tamanio(nuevoTamanio) {
+        if (nuevoTamanio > 0) {
+            this.#tamanio = nuevoTamanio;
+        }
+    }
+    get contactos() {
+        return this.#contactos;
+    }
+
+    set contactos(nuevoContactos) {
+        this.#contactos = nuevoContactos;
     }
 
     aniadirContacto(contacto) {

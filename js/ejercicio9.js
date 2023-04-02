@@ -3,9 +3,29 @@ Crea una clase llamada "Animal" que tenga las propiedades "nombre" y "edad", y e
 */
 
 class Animal {
+    #nombre;
+    #edad;
     constructor(nombre, edad) {
         this.nombre = nombre;
         this.edad = edad;
+    }
+    get nombre() {
+        return this.#nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+    get edad() {
+        return this.#edad;
+    }
+
+    set edad(nuevaEdad) {
+        if (nuevaEdad > 0 && nuevaEdad < 40) {
+            this.#edad = nuevaEdad;
+        }
     }
     emitirSonido() {}
 }
