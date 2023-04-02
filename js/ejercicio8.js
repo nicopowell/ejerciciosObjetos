@@ -3,10 +3,40 @@ Crea una clase llamada "Persona" que tenga las propiedades "nombre", "edad" y "p
 */
 
 class Persona {
+    #nombre;
+    #edad;
+    #profesion;
     constructor(nombre, edad, profesion) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.profesion = profesion;
+        this.#nombre = nombre;
+        this.#edad = edad;
+        this.#profesion = profesion;
+    }
+    get nombre() {
+        return this.#nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+    get edad() {
+        return this.#edad;
+    }
+
+    set edad(nuevaEdad) {
+        if (nuevaEdad > 0 && nuevaEdad < 130) {
+            this.#edad = nuevaEdad;
+        }
+    }
+    get profesion() {
+        return this.#profesion;
+    }
+
+    set profesion(nuevaProfesion) {
+        if (nuevaProfesion !== "") {
+            this.#profesion = nuevaProfesion;
+        }
     }
     saludar() {
         document.write(`<p>Hola, soy ${this.nombre}</p>`);

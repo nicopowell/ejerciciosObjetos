@@ -9,21 +9,49 @@ objeto.apagar();        El auto se apagó
 */
 
 auto = {
-    color: "Rojo",
-    marca: "Peugeot",
-    modelo: "208",
-    encendido: false,
+    _color: "Rojo",
+    _marca: "Peugeot",
+    _modelo: "208",
+    _encendido: false,
+
+    get color() {
+        return this._color;
+    },
+
+    set color(nuevoColor) {
+        if (nuevoColor !== "") {
+            this._color = nuevoColor;
+        }
+    },
+    get marca() {
+        return this._marca;
+    },
+
+    set marca(nuevaMarca) {
+        if (nuevaMarca !== "") {
+            this._marca = nuevaMarca;
+        }
+    },
+    get modelo() {
+        return this._modelo;
+    },
+
+    set modelo(nuevoModelo) {
+        if (nuevoModelo !== "") {
+            this._modelo = nuevoModelo;
+        }
+    },
     encender: () => {
-        if (auto.encendido == false) {
-            auto.encendido = true;
+        if (auto._encendido == false) {
+            auto._encendido = true;
             return "Auto encendido";
         } else {
             return "El auto ya estaba encendido";
         }
     },
     apagar: () => {
-        if (auto.encendido == true) {
-            auto.encendido = true;
+        if (auto._encendido == true) {
+            auto._encendido = true;
             return "El auto se apagó";
         } else {
             return "El auto ya estaba apagado";
