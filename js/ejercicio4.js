@@ -5,10 +5,40 @@ Por último, utilice el método imprime datos para mostrar por pantalla los valo
 */
 
 class Producto {
+    #codigo;
+    #nombre;
+    #precio;
     constructor(codigo, nombre, precio) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio = precio;
+        this.#codigo = codigo;
+        this.#nombre = nombre;
+        this.#precio = precio;
+    }
+    get codigo() {
+        return this.#codigo;
+    }
+
+    set codigo(nuevoCodigo) {
+        if (nuevoCodigo > 0) {
+            this.#codigo = nuevoCodigo;
+        }
+    }
+    get nombre() {
+        return this.#nombre;
+    }
+
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+    get precio() {
+        return this.#precio;
+    }
+
+    set precio(nuevoPrecio) {
+        if (nuevoPrecio > 0) {
+            this.#precio = nuevoPrecio;
+        }
     }
     mostrarInfo() {
         document.write(`<p>Código: ${this.codigo}</p>`);
@@ -17,9 +47,9 @@ class Producto {
         document.write("<hr>");
     }
 }
-const cocaCola = new Producto(001, "Coca-Cola 500ml", 200);
-const oreo = new Producto(002, "Oreo", 250);
-const leche = new Producto(003, "Leche La Serenisima 1L", 195);
+const cocaCola = new Producto(103, "Coca-Cola 500ml", 200);
+const oreo = new Producto(234, "Oreo", 250);
+const leche = new Producto(313, "Leche La Serenisima 1L", 195);
 
 listaProductos = [cocaCola, oreo, leche];
 
