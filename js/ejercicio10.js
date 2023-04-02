@@ -6,9 +6,27 @@ Crear un objeto de tipo aeropuerto llamado "Aeropuerto Internacional", crear 3 o
 */
 
 class Aeropuerto {
+    #nombreAeropuerto;
+    #listaAviones;
     constructor(nombreAeropuerto) {
         this.nombreAeropuerto = nombreAeropuerto;
         this.listaAviones = [];
+    }
+    get nombreAeropuerto() {
+        return this.#nombreAeropuerto;
+    }
+
+    set nombreAeropuerto(nuevoNombreAeropuerto) {
+        if (nuevoNombreAeropuerto !== "") {
+            this.#nombreAeropuerto = nuevoNombreAeropuerto;
+        }
+    }
+    get listaAviones() {
+        return this.#listaAviones;
+    }
+
+    set listaAviones(nuevaListaAviones) {
+        this.#listaAviones = nuevaListaAviones;
     }
 
     agregarAvion(avion) {
@@ -37,11 +55,49 @@ class Aeropuerto {
 }
 
 class Avion {
+    #nombre;
+    #capacidad;
+    #destino;
+    #listaPasajeros;
     constructor(nombre, capacidad, destino) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.destino = destino;
         this.listaPasajeros = [];
+    }
+
+    get nombre() {
+        return this.#nombre;
+    }
+    set nombre(nuevoNombre) {
+        if (nuevoNombre !== "") {
+            this.#nombre = nuevoNombre;
+        }
+    }
+
+    get capacidad() {
+        return this.#capacidad;
+    }
+    set capacidad(nuevaCapacidad) {
+        if (nuevaCapacidad > 0) {
+            this.#capacidad = nuevaCapacidad;
+        }
+    }
+
+    get destino() {
+        return this.#destino;
+    }
+    set destino(nuevoDestino) {
+        if (nuevoDestino !== "") {
+            this.#destino = nuevoDestino;
+        }
+    }
+
+    get listaPasajeros() {
+        return this.#listaPasajeros;
+    }
+    set listaPasajeros(nuevaListaPasajeros) {
+        this.#listaPasajeros = nuevaListaPasajeros;
     }
 
     abordar(pasajero) {
