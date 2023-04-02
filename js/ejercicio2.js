@@ -10,8 +10,26 @@ Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y vo
 */
 
 cuenta = {
-    titular: "Alex",
-    saldo: 0,
+    _titular: "Alex",
+    _saldo: 0,
+    get titular() {
+        return this._titular;
+    },
+
+    set titular(nuevoTitular) {
+        if (nuevoTitular !== "") {
+            this._titular = nuevoTitular;
+        }
+    },
+    get saldo() {
+        return this._saldo;
+    },
+
+    set saldo(nuevoSaldo) {
+        if (nuevoSaldo !== "") {
+            this._saldo = nuevoSaldo;
+        }
+    },
     ingresar: cantidad => {
         cuenta.saldo += cantidad;
         document.write(`<hr>Se ingresaron $${cantidad}`);
